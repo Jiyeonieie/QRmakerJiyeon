@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    body {
+      text-align: center;
+
+      background: #009FFF;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #ec2F4B, #009FFF);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+  </style>
+</head>
+
+<body>
+  <div style="
+      width: 800px;  
+      margin: 0 auto;
+      background: #eee;
+      background-color: yellow;
+      border-radius: 5px;
+      padding: 30px 40px;
+      margin-top: 100px;
+      margin-bottom: 200px;">
+    <h1>!오직 과중반에서만 볼 수 있는
+         엄청난 QR코드 제조기!</h1>
+
+         <input type="text" id="data">
+
+         <select id="bgcolor">
+           <option value="white">White</option>
+           <option value="black">Black</option>  
+           <option value="red">Red</option>
+         </select>
+         
+         <style>
+         input, select {
+           padding: 12px 15px;  
+           border: none;
+           border-radius: 5px;
+           background: #f1f1f1;  
+         }
+         
+         select {
+           appearance: none;
+           -webkit-appearance: none;
+           -moz-appearance: none;
+         }
+         
+         input:focus, select:focus {
+           outline: none;
+           background: #ddd;
+         }
+         </style>
+         
+
+    <div style="margin: 0 auto;"  id="qrContainer"></div>
+
+    <button onclick="generateQR()">
+      <span>GENERATE</span>
+    </button>
+    
+    <style>
+    button {
+      margin-top: 25px;
+      padding: 12px 25px;
+      background: #4CAF50; 
+      border: none;
+      border-radius: 5px;
+      color: white;
+      position: relative;
+      overflow: hidden;  
+    }
+    
+    button span {
+      position: relative;
+      z-index: 1;
+    }
+    
+    button:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0;
+      background: #3e8e41;
+      transition: all 0.35s;
+      border-radius: 5px;  
+    }
+    
+    button:hover:after {
+      width: 100%;
+    }
+    </style>
+    
+
+  </div>
+
+  <div>
+    <img src="https://www.justwatch.com/images/backdrop/113331143/s640/%EC%8B%9C%EC%A6%8C-1/%EC%8B%9C%EC%A6%8C-1">
+  </div>
+
+  <script>
+    function generateQR() {
+
+      let data = document.getElementById('data').value;
+      let bgcolor = document.getElementById('bgcolor').value;
+
+      let qrcode = new QRCode(document.getElementById("qrContainer"), {
+        text: data,
+        colorDark: "#000000",
+        colorLight: bgcolor,
+        width: 256,
+        height: 256
+      });
+
+    }
+  </script>
+
+</body>
+
+<footer style="
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: black;
+          color: white;
+          text-align: center;
+          padding: 35px;
+          font-size: 17px;">
+
+    <p>@developed by jiyeon</p>
+
+</footer>
+
+
+</html>
